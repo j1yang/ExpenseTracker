@@ -107,7 +107,37 @@
 
   <!-- Add new Transaction -->
   <section id="add-transaction">
+    <div class="section-container">
+      <div class="navbar">
+        <h1>New Transaction</h1>
+        <!-- Toggle Button -->
+        <div class="navbar__toggle-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
 
+      <div class="add-transaction__date">
+        <h2>Date</h2>
+        <input type="text" class="transaction__year">
+        <input type="text" class="transaction__month">
+        <input type="text" class="transaction__day">
+      </div>
+      <div class="add-transaction__content">
+        <h2>Content</h2>
+        <div class="transaction__rad">IN</div>
+        <div class="transaction__rad">OUT</div>
+        <input type="text" class="transaction__title">
+      </div>
+      <div class="add-transaction__amount">
+        <h2>Amount</h2>
+        <input type="text" class="transaction__amount">
+      </div>
+
+      <button class="add-transaction__submit">
+        submit
+      </button>
+
+    </div>
   </section>
 
 </html>
