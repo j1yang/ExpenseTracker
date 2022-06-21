@@ -17,27 +17,28 @@
   <nav id="navbar">
     <ul class="navbar__menu">
       <li class="navbar__menu__item active" data-link="#home">Home</li>
-      <li class="navbar__menu__item" data-link="#transactions">About</li>
-      <li class="navbar__menu__item" data-link="#add-transaction">Skills</li>
+      <li class="navbar__menu__item" data-link="#transactions">Transactions</li>
+      <li class="navbar__menu__item" data-link="#add-transaction">Add New</li>
     </ul>
   </nav>
 
   <!-- Home -->
   <section id="home">
     <div class="section-container">
-      <div class="navbar">
+      <div class="home__navbar">
         <h1>Expensify</h1>
         <!-- Toggle Button -->
         <div class="navbar__toggle-btn">
           <i class="fa-solid fa-bars"></i>
         </div>
       </div>
-  
-      <i class="fa-solid fa-wallet"></i>
+      <div class="line"></div>
+      <div class="home__logo">
+        <i class="fa-solid fa-wallet"></i>
+      </div>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Recusandae amet accusantium unde quia architecto rerum sequi eveniet. 
-        Voluptates dolore doloribus consectetur aliquid repellendus modi adipisci nisi harum ad, optio quod.
       </p>
       
       <div class="display-total">
@@ -124,8 +125,8 @@
       </div>
       <div class="add-transaction__content">
         <h2>Content</h2>
-        <div class="transaction__rad">IN</div>
-        <div class="transaction__rad">OUT</div>
+          <div class="transaction__rad">IN</div>
+          <div class="transaction__rad">OUT</div>
         <input type="text" class="transaction__title">
       </div>
       <div class="add-transaction__amount">
