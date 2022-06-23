@@ -260,7 +260,6 @@ p {
 }
 
 .transaction__title{
-  font-weight: var(--weight-semi-bold);
   font-size: 20px;
 }
 
@@ -281,7 +280,6 @@ p {
 }
 
 
-/* CSS */
 .transactions__add-btn, .add-transaction__submit {
   width: 340px;
   height: 65px;
@@ -370,6 +368,7 @@ p {
   width: 110px;
   height: 40px;
   border-radius: 15px;
+  text-align: center;
 }
 
 .content__rad-container{
@@ -378,7 +377,7 @@ p {
 }
 
 .content__rad-container .transaction__rad{
-  width: 190px;
+  width: 165px;
   height: 60px;
   border-radius: 15px;
   font-size: 30px;
@@ -387,17 +386,20 @@ p {
   line-height: 60px;
   background-color: var(--color-grey);
   border: 1px solid black;
-  margin-bottom: 20px;
 }
 
 .add-transaction__content{
   width: 100%;
 }
 
-.transaction__title, .txtTransaction__amount{
+.txtTransaction__title, .txtTransaction__amount{
   width: 100%;
   height: 30px;
+  border-radius: 10px;
+  padding-left: 10px;
 }
+
+
 
 .add-transaction__submit{
   margin-top: 1em;
