@@ -376,16 +376,42 @@ p {
   justify-content: space-around;
 }
 
-.content__rad-container .transaction__rad{
-  width: 165px;
-  height: 60px;
-  border-radius: 15px;
-  font-size: 30px;
-  color: white;
+
+
+.transaction__rad{
+  background-color: #5468ff;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
   text-align: center;
-  line-height: 60px;
-  background-color: var(--color-grey);
-  border: 1px solid black;
+  transition: 200ms;
+  width: 165px;
+  height: 50px;
+  text-align: center;
+  line-height: 31px;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 23px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border: 1px solid var(--color-dark-grey);
+}
+
+.transaction__rad:not(:disabled):hover,
+.transaction__rad:not(:disabled):focus {
+  outline: 0;
+  background: #5adaff;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.transaction__rad:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
 }
 
 .add-transaction__content{
