@@ -280,7 +280,7 @@ p {
 }
 
 
-.transactions__add-btn, .add-transaction__submit {
+.transactions__add-btn, .add-transaction__submit, .add-transaction__close{
   width: 340px;
   height: 65px;
   align-items: center;
@@ -313,16 +313,18 @@ p {
   font-size: 18px;
 }
 
-.transactions__add-btn:focus, .add-transaction__submit:focus{
+.transactions__add-btn:focus, .add-transaction__submit:focus, .add-transaction__close:focus{
   box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
-.transactions__add-btn:hover, .add-transaction__submit:hover {
+.transactions__add-btn:hover, .add-transaction__submit:hover,
+.add-transaction__close:hover {
   box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
-.transactions__add-btn:active, .add-transaction__submit:active {
+.transactions__add-btn:active, .add-transaction__submit:active,
+.add-transaction__close:active {
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
@@ -330,8 +332,13 @@ p {
 
 /* Add New Transaction */
 #add-transaction{
-  height: 550px;
+  height: 580px;
   margin-bottom: 1em;
+  display: none;
+}
+
+#add-transaction.visible{
+  display: block;
 }
 
 .add-transaction_navbar{
@@ -375,8 +382,6 @@ p {
   display: flex;
   justify-content: space-around;
 }
-
-
 
 .transaction__rad{
   background-color: #5468ff;
@@ -433,4 +438,8 @@ p {
 
 #add-transaction h2{
   font-size: 24px;
+}
+
+.add-transaction__close{
+  margin-top: 10px;
 }
