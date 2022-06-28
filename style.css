@@ -101,6 +101,9 @@ p {
   display: none;
 }
 
+#navbar.open{
+  display: block;
+}
 
 
 /* Home */
@@ -443,3 +446,9 @@ p {
 .add-transaction__close{
   margin-top: 10px;
 }
+
+/* GITHUB OFFLINE */
+.transaction__rad.active{
+  background-color: var(--color-dark-grey);
+}
+
