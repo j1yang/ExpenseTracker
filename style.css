@@ -105,7 +105,7 @@ p {
 
 /* Home */
 #home{
-  height: 590px;
+  height: 640px;
   margin-bottom: 1em;
   position: relative;
 }
@@ -143,8 +143,10 @@ p {
   margin-top: .5em;
 }
 
-.home__logo i{
-  color: rgb(107, 62, 24);
+.home__logo img{
+  padding-left: 20px;
+  width: 160px;
+  height: 160px;
 }
 
 .display-total, .display-total h2{
@@ -372,6 +374,25 @@ p {
   margin-top: 3px;
   cursor: pointer;
   margin-bottom: 30px;
+}
+
+#add-transaction input{
+  background-color: var(--color-white);
+  border-radius: 12px;
+  color: #000;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  text-align: center;
+  line-height: 31px;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 23px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border: 1px solid var(--color-dark-grey);
 }
 
 .date__container{
