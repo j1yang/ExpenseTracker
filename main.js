@@ -21,11 +21,3 @@ function scrollIntoView(selector){
   scrollTo.scrollIntoView({behavior: 'smooth'});
 }
 
-
-// menu hamburger clicked, show navbar menu
-const menuIcon = document.querySelector('.navbar__toggle-btn');
-const navbarMenu = document.querySelector('#navbar');
-menuIcon.addEventListener('click', ()=>{
-  navbarMenu.classList.toggle('open');
-});
-

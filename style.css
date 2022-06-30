@@ -96,26 +96,21 @@ p {
   color: var(--color-black);
   margin: 4px 0;
 }
-/* Navigation bar */
-#navbar {
-  display: none;
-}
 
-#navbar.open{
-  display: block;
-}
 
 
 /* Home */
 #home{
   height: 590px;
   margin-bottom: 1em;
+  position: relative;
 }
 
 .home__navbar{
   display: flex;
   justify-items: flex-start;
   width: 100%;
+  
 }
 
 .home__navbar i {
@@ -231,6 +226,10 @@ p {
   margin-top: 10px;
   margin-right: 4em;
   justify-content: space-between;
+}
+
+.transactions__filter {
+  justify-self: right;
 }
 
 .transactions_navbar .transactions__filter span:nth-child(1){
