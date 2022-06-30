@@ -213,7 +213,7 @@ p {
 
 .transactions_navbar{
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
 }
 
 .transactions_navbar h1{
@@ -222,22 +222,22 @@ p {
 }
 
 .transactions_navbar .transactions__filter{
-  display: flex;
   margin-top: 10px;
-  margin-right: 4em;
-  justify-content: space-between;
+  padding-right: 10px;
+  display: flex;
 }
 
-.transactions__filter {
-  justify-self: right;
+
+.transactions__filter span:hover {
+  font-weight: bold;
+  color: var(--color-dark-grey);
 }
 
 .transactions_navbar .transactions__filter span:nth-child(1){
-  margin-right: 10px;
+  padding-right: 10px;
 }
-.transactions_navbar .transactions__filter span{
-  cursor: pointer;
-}
+
+
 
 .transactions_navbar i {
   margin-top: 3px;
