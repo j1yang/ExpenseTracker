@@ -21,3 +21,36 @@ function scrollIntoView(selector){
   scrollTo.scrollIntoView({behavior: 'smooth'});
 }
 
+
+//when on of filters clicked, activate filter.
+function active(selector){
+  selector.classList.add('active');
+};
+
+function disable(selectors){
+  selectors.forEach(element => {
+    element.classList.remove('active');
+  });
+};
+
+
+const allFilter = document.querySelector('.filter-all');
+const inFilter = document.querySelector('.filter-in');
+const outFilter = document.querySelector('.filter-out');
+
+allFilter.addEventListener('click', ()=>{
+  active(allFilter);
+  disable([inFilter, outFilter]);
+});
+
+inFilter.addEventListener('click', ()=>{
+  active(inFilter);
+  disable([allFilter, outFilter]);
+});
+
+outFilter.addEventListener('click', ()=>{
+  active(outFilter);
+  disable([inFilter, allFilter]);
+});
+
+

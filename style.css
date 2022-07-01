@@ -105,7 +105,7 @@ p {
 
 /* Home */
 #home{
-  height: 640px;
+  height: 660px;
   margin-bottom: 1em;
   position: relative;
 }
@@ -240,6 +240,14 @@ p {
   cursor: pointer;
 }
 
+.filter-all.active,
+.filter-in.active,
+.filter-out.active {
+  font-weight: bold;
+  color: var(--color-dark-grey);
+  cursor: pointer;
+}
+
 .transactions_navbar .transactions__filter span:nth-child(1),
 .transactions_navbar .transactions__filter span:nth-child(2){
   padding-right: 10px;
@@ -342,7 +350,7 @@ p {
 
 /* Add New Transaction */
 #add-transaction{
-  height: 580px;
+  height: 600px;
   margin-bottom: 1em;
   display: none;
 }
