@@ -14,13 +14,18 @@
   --color-light-green: #1CA673;
   --color-whitish-green:#80BFAD;
 
-  --color-bright-green: #56DA3C;
-  --color-bright-red: #BE0822;
+  --color-bright-green: #31CB00 ;
+  --color-bright-red: #A5243D;
+
 
   --color-blue:#0B6E98;
   --color-bluish-green: #0B758C;
   --color-light-blue:#82C9D9;
+
   /* section colour */
+  --color-display-total: #171D1C;
+
+  --color-rad-inout: #171D1C ;
 
 
   /* Font Size */
@@ -152,7 +157,7 @@ p {
 .display-total, .display-total h2{
   text-align: center;
   font-size: 50px;
-  color: var(--color-dark-green);
+  color: var(--color-display-total);
 }
 
 .display-in-out{
@@ -160,9 +165,7 @@ p {
   margin: 40px auto 40px;
   display: flex;
   justify-content: space-evenly;
-
   box-shadow: rgba(128, 123, 165, 0.5) 0 1px 30px;
-
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -174,7 +177,7 @@ p {
   height: 5rem;
   padding: 0 1.6rem;
   text-align: center;
-  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 3px 8px;
   transition: all .5s;
   user-select: none;
   -webkit-user-select: none;
@@ -445,8 +448,9 @@ p {
 
 .transaction__rad:not(:disabled):hover,
 .transaction__rad:not(:disabled):focus {
+  color: var(--color-white);
   outline: 0;
-  background: var(--color-bluish-green);
+  background: var(--color-rad-inout);
   box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
 }
 
