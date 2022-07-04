@@ -63,6 +63,7 @@ btnIn.addEventListener('click', ()=>{
   active(btnIn);
   btnOut.classList.remove('active');
 });
+
 btnOut.addEventListener('click', ()=>{
   active(btnOut);
   btnIn.classList.remove('active');
