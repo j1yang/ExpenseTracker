@@ -54,3 +54,16 @@ outFilter.addEventListener('click', ()=>{
 });
 
 
+// Transaction add radio button clicked, display as active
+
+const btnIn = document.querySelector('.transaction-in__rad');
+const btnOut = document.querySelector('.transaction-out__rad');
+
+btnIn.addEventListener('click', ()=>{
+  active(btnIn);
+  btnOut.classList.remove('active');
+});
+btnOut.addEventListener('click', ()=>{
+  active(btnOut);
+  btnIn.classList.remove('active');
+});

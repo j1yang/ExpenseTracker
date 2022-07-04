@@ -423,7 +423,8 @@ p {
   justify-content: space-around;
 }
 
-.transaction__rad{
+.transaction-in__rad,
+.transaction-out__rad{
   background-color: var(--color-white);
   border-radius: 12px;
   color: #000;
@@ -446,19 +447,26 @@ p {
   border: 1px solid var(--color-dark-grey);
 }
 
-.transaction__rad:not(:disabled):hover,
-.transaction__rad:not(:disabled):focus {
+.transaction-in__rad:not(:disabled):hover,
+.transaction-in__rad:not(:disabled):focus,
+.transaction-out__rad:not(:disabled):hover,
+.transaction-out__rad:not(:disabled):focus  {
   color: var(--color-white);
   outline: 0;
   background: var(--color-rad-inout);
   box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
 }
 
-.transaction__rad:disabled {
-  filter: saturate(0.2) opacity(0.5);
-  -webkit-filter: saturate(0.2) opacity(0.5);
-  cursor: not-allowed;
+
+
+.transaction-in__rad.active,
+.transaction-out__rad.active{
+  color: var(--color-white);
+  outline: 0;
+  background: var(--color-rad-inout);
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
 }
+
 
 .add-transaction__content{
   width: 100%;
@@ -484,9 +492,3 @@ p {
 .add-transaction__close{
   margin-top: 10px;
 }
-
-/* GITHUB OFFLINE */
-.transaction__rad.active{
-  background-color: var(--color-dark-grey);
-}
-
