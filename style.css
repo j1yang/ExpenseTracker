@@ -23,9 +23,9 @@
   --color-light-blue:#82C9D9;
 
   /* section colour */
-  --color-display-total: #171D1C;
+  --color-display-total: #0A2239;
 
-  --color-rad-inout: #171D1C ;
+  --color-rad-inout: #171D1C;
 
 
   /* Font Size */
@@ -53,6 +53,7 @@ body {
   width: 100%;
   font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
   margin-top: 2em;
+  background-color: #086375;
 }
 
 a {
@@ -113,6 +114,7 @@ p {
   height: 660px;
   margin-bottom: 1em;
   position: relative;
+  background-color: var(--color-white);
 }
 
 .home__navbar{
@@ -216,6 +218,7 @@ p {
 
 /* Transactions */
 #transactions{
+  background-color: var(--color-white);
   height: 550px;
   margin-bottom: 1em;
 }
@@ -310,15 +313,14 @@ p {
   border: 1px solid rgb(209,213,219);
   border-radius: .5rem;
   box-sizing: border-box;
-  color: #111827;
+  color: var(--color-grey);
   font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
-  font-size: .875rem;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: bold;
   line-height: 1.25rem;
   padding: .75rem 1rem;
   text-align: center;
   text-decoration: none #D1D5DB solid;
-  text-decoration-thickness: auto;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   cursor: pointer;
   user-select: none;
@@ -349,6 +351,7 @@ p {
   height: 550px;
   margin-bottom: 1em;
   display: none;
+  background-color: var(--color-white);
 }
 
 #add-transaction.visible{
@@ -480,12 +483,12 @@ p {
 
 .add-transaction__submit{
   margin-top: 10px;
-  width: 120px;
+  width: 150px;
 }
 
 .add-transaction__close{
   margin-top: 10px;
-  width: 120px;
+  width: 150px;
 }
 
 .btn-container{
