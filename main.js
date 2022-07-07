@@ -68,3 +68,64 @@ btnOut.addEventListener('click', ()=>{
   active(btnOut);
   btnIn.classList.remove('active');
 });
+
+
+// transaction type radio clicked, determine in or out
+
+const transactionIn = document.querySelector('.transaction-in__rad');
+const transactionOut = document.querySelector('.transaction-out__rad');
+var transactionType ='';
+
+//transaction in rad clicked
+transactionIn.addEventListener('click',()=>{
+  transactionType = 'in';
+});
+//transaction out rad clicked
+transactionOut.addEventListener('click',()=>{
+  transactionType = 'out';
+});
+
+
+
+// add button click
+const btnAdd = document.querySelector('.add-transaction__add');
+const txtTitle = document.querySelector('.txtTransaction__title');
+const txtAmount = document.querySelector('.txtTransaction__amount');
+const txtYear = document.querySelector('.transaction__year');
+const txtMonth = document.querySelector('.transaction__month');
+const txtDay = document.querySelector('.transaction__day');
+
+let TRANSACTION_LIST = [];
+
+btnAdd.addEventListener('click', ()=>{
+  if(!txtTitle.value || !txtAmount.value){
+    return;
+  }
+
+  if(transactionType === 'in'){
+    console.log(`${txtYear.value}, ${txtMonth.value}, ${txtDay.value}, ${txtTitle.value}, ${txtAmount.value}`);
+    let transaction = {
+      year: txtYear.value,
+      month: txtMonth.value,
+      day: txtDay.value,
+      title: txtTitle.value,
+      amount: txtAmount.value
+    }
+
+    //push transaction
+    TRANSACTION_LIST.push(transaction);
+
+    //local storage update
+    updateDatabase();
+    //update screen
+    updateScreen();
+
+
+
+  }else if(transactionType === 'out'){
+    
+  }else{
+    console.log('select transaction type.');
+    return;
+  }
+});

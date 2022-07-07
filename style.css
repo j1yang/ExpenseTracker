@@ -310,7 +310,7 @@ p {
 }
 
 
-.transactions__add-btn, .add-transaction__submit, .add-transaction__close {
+.transactions__add-btn, .add-transaction__add, .add-transaction__close {
   background-color: #FFFFFF;
   border: 1px solid rgb(209,213,219);
   border-radius: .5rem;
@@ -330,17 +330,17 @@ p {
   touch-action: manipulation;
 }
 
-.transactions__add-btn:hover, .add-transaction__submit:hover,
+.transactions__add-btn:hover, .add-transaction__add:hover,
 .add-transaction__close:hover {
   background-color: rgb(249,250,251);
 }
 
-.transactions__add-btn:focus, .add-transaction__submit:focus, .add-transaction__close:focus{
+.transactions__add-btn:focus, .add-transaction__add:focus, .add-transaction__close:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-.transactions__add-btn:active, .add-transaction__submit:active,
+.transactions__add-btn:active, .add-transaction__add:active,
 .add-transaction__close:active {
   transform: translateY(2px);
 }
@@ -483,7 +483,7 @@ p {
 }
 
 
-.add-transaction__submit{
+.add-transaction__add{
   margin-top: 10px;
   width: 150px;
 }
