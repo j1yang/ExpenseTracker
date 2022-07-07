@@ -219,7 +219,7 @@ p {
 /* Transactions */
 #transactions{
   background-color: var(--color-white);
-  height: 550px;
+  height: 560px;
   margin-bottom: 1em;
 }
 
@@ -271,13 +271,14 @@ p {
 .transaction{
   position: relative;
   width: 340px;
-  height: 62px;
+  height: 66px;
   margin-bottom: 15px;
   padding: 6px;
   border-radius: 15px;
   padding-left: 12px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+
 .transaction__date{
   margin-bottom: 6px;
   color: var(--color-grey);
@@ -285,6 +286,7 @@ p {
 
 .transaction__title{
   font-size: 20px;
+  font-weight: 500;
 }
 
 .transaction__amount{
@@ -304,7 +306,7 @@ p {
 }
 
 .transactions__add-btn{
- width:  100%;
+  width:  100%;
 }
 
 
