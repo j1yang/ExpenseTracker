@@ -125,8 +125,6 @@ btnAdd.addEventListener('click', ()=>{
     //clear input
     clearInput([txtTitle, txtAmount, txtYear, txtMonth, txtDay]);
 
-
-
   }else if(transactionType === 'out'){
     console.log(`${txtYear.value}, ${txtMonth.value}, ${txtDay.value}, ${txtTitle.value}, ${txtAmount.value}`);
     let transaction = {
@@ -160,25 +158,24 @@ function updateDatabase(){
   localStorage.setItem('transactions', JSON.stringify(TRANSACTION_LIST))
 }
 
-let totalDisplay = document.querySelector('display-total');
+//global variable
 let totalIn = 0, totalOut = 0, balance = 0;
 
 function updateScreen(){
   console.log('screen updated');
-  totalIn = parseFloat(calculateTotalByType('in', TRANSACTION_LIST)).toFixed(2);
-  totalOut = parseFloat(calculateTotalByType('out', TRANSACTION_LIST)).toFixed(2);
-  console.log(`${totalIn} , ${totalOut}`)
+  totalIn = parseFloat(calculateTotalByType('in'));
+  totalOut = parseFloat(calculateTotalByType('out'));
   balance = Math.abs(totalIn - totalOut);
 
-  const sign = (totalIn >= totalOut) ? '+$' : '-$';
-  console.log(`${sign}${balance}`)
+  const sign = (totalIn >= totalOut) ? '$' : '-$';
 
-  totalDisplay.innerHTML = `<h2>${sign}<span>${numberWithCommas(balance)}</span></h2>`
+  let totalDisplay = document.querySelector('.display-total');
+  totalDisplay.innerHTML = `<h2>${sign}${numberWithCommas(balance)}</h2>`
 
 }
 
 function numberWithCommas(num) {
-  return num.toLocaleString("en-US");;
+  return num.toLocaleString("en-US");
 }
 
 function clearInput(elements){
@@ -187,13 +184,18 @@ function clearInput(elements){
   });
 }
 
-function calculateTotalByType(type, transactions){
+function calculateTotalByType(type){
   let total = 0;
+  let transactions = JSON.parse(localStorage.getItem('transactions'));
+
   transactions.forEach(transaction => {
     if(transaction.type === type){
-      total += transaction.amount;
+      total = parseFloat(total) + parseFloat(transaction.amount);
     }
   });
 
-  return total;
+  return parseFloat(total).toFixed(2);
 }
+
+
+
