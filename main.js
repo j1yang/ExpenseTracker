@@ -117,7 +117,7 @@ btnAdd.addEventListener('click', ()=>{
     TRANSACTION_LIST.push(transaction);
 
     //local storage update
-    updateDatabase(TRANSACTION_LIST);
+    updateDatabase();
 
     //update screen
     updateScreen();
@@ -142,7 +142,7 @@ btnAdd.addEventListener('click', ()=>{
     TRANSACTION_LIST.push(transaction);
 
     //local storage update
-    updateDatabase(TRANSACTION_LIST);
+    updateDatabase();
 
     //update screen
     updateScreen();
@@ -156,18 +156,44 @@ btnAdd.addEventListener('click', ()=>{
 });
 
 
-function updateDatabase(transactions){
-  localStorage.setItem('transactions', JSON.stringify(transactions))
+function updateDatabase(){
+  localStorage.setItem('transactions', JSON.stringify(TRANSACTION_LIST))
 }
+
+let totalDisplay = document.querySelector('display-total');
+let totalIn = 0, totalOut = 0, balance = 0;
 
 function updateScreen(){
   console.log('screen updated');
+  totalIn = parseFloat(calculateTotalByType('in', TRANSACTION_LIST)).toFixed(2);
+  totalOut = parseFloat(calculateTotalByType('out', TRANSACTION_LIST)).toFixed(2);
+  console.log(`${totalIn} , ${totalOut}`)
+  balance = Math.abs(totalIn - totalOut);
 
-  
+  const sign = (totalIn >= totalOut) ? '+$' : '-$';
+  console.log(`${sign}${balance}`)
+
+  totalDisplay.innerHTML = `<h2>${sign}<span>${numberWithCommas(balance)}</span></h2>`
+
+}
+
+function numberWithCommas(num) {
+  return num.toLocaleString("en-US");;
 }
 
 function clearInput(elements){
   elements.forEach(element => {
     element.innerHTML = '';
   });
+}
+
+function calculateTotalByType(type, transactions){
+  let total = 0;
+  transactions.forEach(transaction => {
+    if(transaction.type === type){
+      total += transaction.amount;
+    }
+  });
+
+  return total;
 }
