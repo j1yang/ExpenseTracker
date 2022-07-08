@@ -107,7 +107,8 @@ btnAdd.addEventListener('click', ()=>{
     let transaction = {
       year: txtYear.value,
       month: txtMonth.value,
-      day: txtDay.value,
+      date: txtDay.value,
+      type: 'in',
       title: txtTitle.value,
       amount: txtAmount.value
     }
@@ -116,16 +117,57 @@ btnAdd.addEventListener('click', ()=>{
     TRANSACTION_LIST.push(transaction);
 
     //local storage update
-    updateDatabase();
+    updateDatabase(TRANSACTION_LIST);
+
     //update screen
     updateScreen();
+
+    //clear input
+    clearInput([txtTitle, txtAmount, txtYear, txtMonth, txtDay]);
 
 
 
   }else if(transactionType === 'out'){
-    
+    console.log(`${txtYear.value}, ${txtMonth.value}, ${txtDay.value}, ${txtTitle.value}, ${txtAmount.value}`);
+    let transaction = {
+      year: txtYear.value,
+      month: txtMonth.value,
+      date: txtDay.value,
+      type: 'out',
+      title: txtTitle.value,
+      amount: txtAmount.value
+    }
+
+    //push transaction
+    TRANSACTION_LIST.push(transaction);
+
+    //local storage update
+    updateDatabase(TRANSACTION_LIST);
+
+    //update screen
+    updateScreen();
+
+    //clear input
+    clearInput([txtTitle, txtAmount, txtYear, txtMonth, txtDay]);
   }else{
     console.log('select transaction type.');
     return;
   }
 });
+
+
+function updateDatabase(transactions){
+  localStorage.setItem('transactions', JSON.stringify(transactions))
+}
+
+function updateScreen(){
+  console.log('screen updated');
+
+  
+}
+
+function clearInput(elements){
+  elements.forEach(element => {
+    element.innerHTML = '';
+  });
+}
