@@ -162,16 +162,25 @@ function updateDatabase(){
 let totalIn = 0, totalOut = 0, balance = 0;
 
 function updateScreen(){
-  console.log('screen updated');
   totalIn = parseFloat(calculateTotalByType('in'));
   totalOut = parseFloat(calculateTotalByType('out'));
   balance = Math.abs(totalIn - totalOut);
 
   const sign = (totalIn >= totalOut) ? '$' : '-$';
-
+  //update display total
   let totalDisplay = document.querySelector('.display-total');
   totalDisplay.innerHTML = `<h2>${sign}${numberWithCommas(balance)}</h2>`
 
+  //update home.total-in
+  let totalInDisplay = document.querySelector('.display__in');
+  let totalOutDisplay = document.querySelector('.display__out');
+
+  totalInDisplay.innerHTML = `<h3>IN</h3>
+                      <h2>${sign}${totalIn.toFixed(2)}</h2>`;
+
+  //update home.total-out
+  totalOutDisplay.innerHTML = `<h3>OUT</h3>
+                      <h2>${sign}${totalOut.toFixed(2)}</h2>`;
 }
 
 function numberWithCommas(num) {
