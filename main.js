@@ -101,6 +101,12 @@ const txtDay = document.querySelector('.transaction__day');
 let totalIn = 0, totalOut = 0, balance = 0;
 let TRANSACTION_LIST = [];
 
+function clearInput(selctors){
+  selctors.forEach((selector) => {
+    selector.value = "";
+  });
+}
+
 btnAdd.addEventListener('click', ()=>{
   if(!txtTitle.value || !txtAmount.value){
     return;
@@ -125,6 +131,7 @@ btnAdd.addEventListener('click', ()=>{
 
     //update screen
     updateScreen();
+    disable([transactionIn,transactionOut]);
 
     //clear input
     clearInput([txtTitle, txtAmount, txtYear, txtMonth, txtDay]);
@@ -148,9 +155,11 @@ btnAdd.addEventListener('click', ()=>{
 
     //update screen
     updateScreen();
+    disable([transactionIn,transactionOut]);
 
     //clear input
     clearInput([txtTitle, txtAmount, txtYear, txtMonth, txtDay]);
+
   }else{
     console.log('select transaction type.');
     return;
@@ -179,21 +188,15 @@ function updateScreen(){
   let totalOutDisplay = document.querySelector('.display__out');
 
   totalInDisplay.innerHTML = `<h3>IN</h3>
-                      <h2>${sign}${totalIn.toFixed(2)}</h2>`;
+                      <h2>+$${totalIn.toFixed(2)}</h2>`;
 
   //update home.total-out
   totalOutDisplay.innerHTML = `<h3>OUT</h3>
-                      <h2>${sign}${totalOut.toFixed(2)}</h2>`;
+                      <h2>-$${totalOut.toFixed(2)}</h2>`;
 }
 
 function numberWithCommas(num) {
   return num.toLocaleString("en-US");
-}
-
-function clearInput(elements){
-  elements.forEach(element => {
-    element.innerHTML = '';
-  });
 }
 
 function calculateTotalByType(type){
