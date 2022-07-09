@@ -1,3 +1,5 @@
+
+
 // Btn add-transaction clicked, 
 // scroll down to add transaction section
 const BtnAddTransaction = document.querySelector('.transactions__add-btn');
@@ -87,7 +89,8 @@ transactionOut.addEventListener('click',()=>{
 
 
 
-// add button click
+//add button click
+//global variable
 const btnAdd = document.querySelector('.add-transaction__add');
 const txtTitle = document.querySelector('.txtTransaction__title');
 const txtAmount = document.querySelector('.txtTransaction__amount');
@@ -95,6 +98,7 @@ const txtYear = document.querySelector('.transaction__year');
 const txtMonth = document.querySelector('.transaction__month');
 const txtDay = document.querySelector('.transaction__day');
 
+let totalIn = 0, totalOut = 0, balance = 0;
 let TRANSACTION_LIST = [];
 
 btnAdd.addEventListener('click', ()=>{
@@ -158,8 +162,7 @@ function updateDatabase(){
   localStorage.setItem('transactions', JSON.stringify(TRANSACTION_LIST))
 }
 
-//global variable
-let totalIn = 0, totalOut = 0, balance = 0;
+
 
 function updateScreen(){
   totalIn = parseFloat(calculateTotalByType('in'));
@@ -207,4 +210,14 @@ function calculateTotalByType(type){
 }
 
 
+// Display Transactions
 
+
+
+// DOM onload
+document.onload = init();
+
+function init() {
+  //Init screen
+  updateScreen();
+}
