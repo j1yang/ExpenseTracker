@@ -99,7 +99,7 @@ const txtMonth = document.querySelector('.transaction__month');
 const txtDay = document.querySelector('.transaction__day');
 
 let totalIn = 0, totalOut = 0, balance = 0;
-let TRANSACTION_LIST = [];
+let TRANSACTION_LIST = JSON.parse(localStorage.getItem('transactions'));
 
 function clearInput(selctors){
   selctors.forEach((selector) => {

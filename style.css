@@ -219,7 +219,7 @@ p {
 /* Transactions */
 #transactions{
   background-color: var(--color-white);
-  height: 560px;
+  height: 600px;
   margin-bottom: 1em;
   padding: 30px 10px;
 }
@@ -264,7 +264,6 @@ p {
 }
 
 
-
 .transactions_navbar i {
   margin-top: 3px;
   cursor: pointer;
@@ -272,8 +271,9 @@ p {
 }
 
 .transactions__transaction{
-  height: 410px;
+  height: 440px;
   overflow: scroll;
+  padding-bottom: 10px;
 }
 
 .transaction{
