@@ -211,7 +211,25 @@ function calculateTotalByType(type){
 
 
 // Display Transactions
-
+function displayTransactions(title, amount, year, month, date, type){
+  const colour = (type === 'in') ? 'green' : 'red';
+  const sign = (type === 'in') ? '+' : '-';
+  const script = `<div class="transactions__transaction">
+  <div class="transaction">
+    <div class="transaction__date">
+      ${year}/${month}/${date}
+    </div>
+    <div class="transaction__title">
+      ${title}
+    </div>
+    <div class="transaction__amount ${colour}">
+      ${sign}$${amount}
+    </div>
+  </div>`;
+  
+  const transactions = document.querySelector('.transactions__transaction');
+  transactions.insertAdjacentHTML('afterbegin', script);
+}
 
 
 // DOM onload
