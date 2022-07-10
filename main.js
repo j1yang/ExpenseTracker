@@ -214,7 +214,7 @@ function calculateTotalByType(type){
 
 
 // Display Transactions
-function displayTransactions(title, amount, year, month, date, type){
+function showTransaction(title, amount, year, month, date, type){
   const colour = (type === 'in') ? 'green' : 'red';
   const sign = (type === 'in') ? '+' : '-';
   const script = `<div class="transactions__transaction">
@@ -234,6 +234,18 @@ function displayTransactions(title, amount, year, month, date, type){
   transactions.insertAdjacentHTML('afterbegin', script);
 }
 
+function loadTransactions(){
+  let transactions = JSON.parse(localStorage.getItem('transactions'));
+
+  transactions.forEach((transaction) => {
+    showTransaction(transaction.title, transaction.amount, 
+      transaction.year, transaction.month, transaction.date,
+      transaction.type);
+  });
+}
+
+
+
 
 // DOM onload
 document.onload = init();
@@ -241,4 +253,5 @@ document.onload = init();
 function init() {
   //Init screen
   updateScreen();
+  loadTransactions();
 }
