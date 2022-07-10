@@ -123,6 +123,10 @@ btnAdd.addEventListener('click', ()=>{
       amount: txtAmount.value
     }
 
+    if(TRANSACTION_LIST == null){
+      TRANSACTION_LIST = [];
+    }
+
     //push transaction
     TRANSACTION_LIST.push(transaction);
 
@@ -145,6 +149,10 @@ btnAdd.addEventListener('click', ()=>{
       type: 'out',
       title: txtTitle.value,
       amount: txtAmount.value
+    }
+
+    if(TRANSACTION_LIST == null){
+      TRANSACTION_LIST = [];
     }
 
     //push transaction
@@ -236,6 +244,7 @@ function showTransaction(title, amount, year, month, date, type){
 function loadTransactions(){
   let transactions = JSON.parse(localStorage.getItem('transactions'));
 
+  if(transactions == null) return;
   transactions.forEach((transaction) => {
     showTransaction(transaction.title, transaction.amount, 
       transaction.year, transaction.month, transaction.date,
