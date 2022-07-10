@@ -221,11 +221,15 @@ p {
   background-color: var(--color-white);
   height: 560px;
   margin-bottom: 1em;
+  padding: 30px 10px;
 }
+
 
 .transactions_navbar{
   display: flex;
   justify-content: space-between;
+  width: 340px;
+  margin: 0 auto;
 }
 
 .transactions_navbar h1{
@@ -267,6 +271,10 @@ p {
   margin-bottom: 30px;
 }
 
+.transactions__transaction{
+  height: 410px;
+  overflow: scroll;
+}
 
 .transaction{
   position: relative;
@@ -277,6 +285,7 @@ p {
   border-radius: 15px;
   padding-left: 12px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin: 0 auto;
 }
 
 .transaction__date{
