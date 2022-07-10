@@ -115,6 +115,7 @@ p {
   margin-bottom: 1em;
   position: relative;
   background-color: var(--color-white);
+  padding: 30px 10px;
 }
 
 .home__navbar{
@@ -163,7 +164,7 @@ p {
 }
 
 .display-in-out{
-  width: 320px;
+  width: 380px;
   margin: 40px auto 40px;
   display: flex;
   justify-content: space-evenly;
@@ -205,10 +206,12 @@ p {
 
 .display__in, .display__out{
   padding: .1em;
+  width: 180px;
 }
 
 .display__in h2{
   color: var(--color-bright-green);
+  
 }
 
 .display__out h2{
