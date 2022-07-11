@@ -137,6 +137,9 @@ btnAdd.addEventListener('click', ()=>{
     updateScreen();
     disable([transactionIn,transactionOut]);
 
+    location.reload();
+    sectionAddTxn.classList.add('visible');
+
     //clear input
     clearInput([txtTitle, txtAmount, txtYear, txtMonth, txtDay]);
 
@@ -164,6 +167,8 @@ btnAdd.addEventListener('click', ()=>{
     //update screen
     updateScreen();
     disable([transactionIn,transactionOut]);
+
+    location.reload();
 
     //clear input
     clearInput([txtTitle, txtAmount, txtYear, txtMonth, txtDay]);
