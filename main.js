@@ -43,16 +43,21 @@ const outFilter = document.querySelector('.filter-out');
 allFilter.addEventListener('click', ()=>{
   active(allFilter);
   disable([inFilter, outFilter]);
+  const transactions = document.querySelector('.transactions__transaction');
+  transactions.innerHTML = '';
+  loadTransactions();
 });
 
 inFilter.addEventListener('click', ()=>{
   active(inFilter);
   disable([allFilter, outFilter]);
+  filterTransaction('in');
 });
 
 outFilter.addEventListener('click', ()=>{
   active(outFilter);
   disable([inFilter, allFilter]);
+  filterTransaction('out');
 });
 
 
@@ -256,6 +261,23 @@ function loadTransactions(){
       transaction.type);
   });
 }
+
+// Transaction filters
+function filterTransaction(type){
+  if(TRANSACTION_LIST == null){
+    return;
+  }
+  const transactions = document.querySelector('.transactions__transaction');
+  transactions.innerHTML = '';
+  TRANSACTION_LIST.forEach((transaction) =>{
+    if(transaction.type == type){
+      showTransaction(transaction.title, transaction.amount, transaction.year, 
+        transaction.month, transaction.date, transaction.type);
+    }
+  });
+}
+
+
 
 
 
