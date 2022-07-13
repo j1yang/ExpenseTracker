@@ -221,6 +221,10 @@ function calculateTotalByType(type){
   let total = 0;
   let transactions = JSON.parse(localStorage.getItem('transactions'));
 
+  if(transactions == null){
+    return 0;
+  }
+
   transactions.forEach(transaction => {
     if(transaction.type === type){
       total = parseFloat(total) + parseFloat(transaction.amount);
@@ -280,13 +284,17 @@ function filterTransaction(type){
 
 
 
-
-
 // DOM onload
 document.onload = init();
 
 function init() {
-  //Init screen
-  updateScreen();
-  loadTransactions();
+  const transactions = document.querySelector('.transactions__transaction');
+  if(TRANSACTION_LIST != null){
+    //Init screen
+    updateScreen();
+    loadTransactions();
+  }else{
+    transactions.innerHTML = `<p>There is no transactions to display. <br>Please add new transaction.</p>`;
+  }
+  
 }

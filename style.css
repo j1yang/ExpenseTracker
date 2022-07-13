@@ -282,6 +282,12 @@ p {
   padding-bottom: 10px;
 }
 
+.transactions__transaction p{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 50%;
+}
+
 .transaction{
   position: relative;
   width: 340px;
